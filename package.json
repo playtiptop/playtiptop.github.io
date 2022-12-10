@@ -1,0 +1,15 @@
+{
+    "name": "playtiptop",
+    "version": "1.0.0",
+    "description": "Top Ten is a party game with answers from the most logical to the most eccentric",
+    "scripts": {
+        "start": "parcel --open",
+        "build": "parcel build"
+    },
+    "devDependencies": {
+        "parcel": "latest",
+        "push-dir": "latest",
+        "typescript": "latest"
+    },
+    "source": "index.html"
+}
