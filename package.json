@@ -8,8 +8,11 @@
     },
     "devDependencies": {
         "parcel": "latest",
-        "push-dir": "latest",
         "typescript": "latest"
     },
-    "source": "index.html"
+    "source": "index.html",
+    "dependencies": {
+        "base32-decode": "^1.0.0",
+        "base32-encode": "^2.0.0"
+    }
 }
