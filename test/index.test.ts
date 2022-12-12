@@ -1,5 +1,5 @@
 import {describe, expect, test} from '@jest/globals';
-import { enc, dec } from "../src";
+import { enc, dec } from "../src/helpers";
 
 
 test('two plus two is four', () => {
