@@ -1,6 +1,6 @@
 const RFC4648 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567'
 
-export function base32Encode(data: Buffer): string {
+export function base32Encode(data: ArrayBuffer): string {
 
     const view = new DataView(data)
 
@@ -81,7 +81,7 @@ export function enc(arr: number[]): string {
     console.log("int:", x)
     let ba = Buffer.alloc(4)
     ba.writeUInt32BE(x)
-    return base32Encode(ba)
+    return base32Encode(ba.buffer)
 }
 
 export function dec(text: string): number[] {
@@ -89,11 +89,11 @@ export function dec(text: string): number[] {
     let bb = Buffer.from(b)
     let tmp = bb.readUInt32BE(0)
     let items = tmp.toString().split("").map(x => parseInt(x))
-    let missing = 9 * 10 / 2;
+    let missing = items.length * (items.length + 1) / 2
     items.forEach((element) => {
-        missing -= element;
-    });
-    if (missing != 0 && 0! in items) {
+        missing -= element
+    })
+    if (missing != 0 && !(0 in items)) {
         items = [0].concat(items)
     }
     items = shiftLeft(items, missing)

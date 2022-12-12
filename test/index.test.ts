@@ -1,13 +1,16 @@
-import {describe, expect, test} from '@jest/globals';
-import { enc, dec } from "../src/helpers";
+import { describe, expect, test } from '@jest/globals'
+import { enc, dec } from "../src/helpers"
 
 
 test('two plus two is four', () => {
 
   let items = [...Array(10).keys()]
-  expect(enc(items)).toBe('fdsaDSA');
+  expect(enc(items)).toBe('fdsaDSA')
 });
-  
+
 test('two plus two is four', () => {
-  expect('EIO2QDQ').toBe([1,2,3]);
-});
+  let expected = [8, 9, 1, 0, 5, 7, 2, 3, 6, 4]
+  let e = enc(expected)
+
+  expect(dec(e)).toBe(expected)
+})

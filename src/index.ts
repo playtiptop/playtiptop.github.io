@@ -1,4 +1,4 @@
-import { base32Decode, base32Encode, shuffle, enc, dec } from "./lib/helper";
+import { base32Decode, base32Encode, shuffle, enc, dec } from "./helpers";
 
 document.getElementById("app")!.innerHTML = `
 <h1>Hello Vanilla!</h1>

@@ -17,10 +17,9 @@
         "buffer": "^5.7.1",
         "jest": "^29.3.1",
         "parcel": "^2.8.1",
+        "ts-jest": "^29.0.3",
         "typescript": "^4.9.4"
     },
     "source": "index.html",
-    "type": "module",
-    "dependencies": {
-    }
+    "type": "module"
 }
