@@ -3,16 +3,26 @@
     "version": "1.0.0",
     "description": "Top Ten is a party game with answers from the most logical to the most eccentric",
     "scripts": {
-        "start": "parcel --open",
-        "build": "parcel build"
+        "start": "parcel",
+        "build": "parcel build",
+        "test": "jest ./test"
     },
     "devDependencies": {
+        "@types/jest": "^29.2.4",
+        "@types/node": "^18.11.13",
+        "buffer": "^5.7.1",
+        "jest": "^29.3.1",
         "parcel": "latest",
+        "ts-jest": "^29.0.3",
+        "ts-node": "^10.9.1",
         "typescript": "latest"
     },
     "source": "index.html",
     "dependencies": {
         "base32-decode": "^1.0.0",
         "base32-encode": "^2.0.0"
+    },
+    "directories": {
+        "test": "test"
     }
 }
