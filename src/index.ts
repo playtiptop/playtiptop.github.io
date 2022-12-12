@@ -10,7 +10,7 @@ document.getElementById("app")!.innerHTML = `
 
 
 
-if (window.location.pathname === "/") {
+if (!window.location.search.startsWith("?q=")) {
   document.addEventListener('DOMContentLoaded', function (event) {
 
     let arr = [...Array(10).keys()] // .map(x => x+1)
@@ -20,7 +20,7 @@ if (window.location.pathname === "/") {
     console.log()
       
     let e = enc(arr)
-    let link = window.location.origin + "/" + e
+    let link = window.location.origin + "?q=" + e
     document.getElementById("mylink")!.innerHTML = `<a href=\"${link}\">${link}</a>`
     this.getElementById("mybutton")!.onclick = function () {
       navigator.clipboard.writeText(link)
@@ -29,9 +29,9 @@ if (window.location.pathname === "/") {
   })
   
 } else {
-  let tmp = window.location.pathname.substring(1)
+  let tmp = window.location.search.substring(3)
   let items = dec(tmp)
-  document.getElementById("app")!.innerHTML = items.join("|")
+  document.getElementById("app")!.innerHTML = items.join(" | ")
 
 }
 
