@@ -74,6 +74,7 @@ function shiftLeft(array: number[], pos: number): number[] {
 }
 
 export function enc(arr: number[]): string {
+    arr = [...arr]
     console.log(arr)
     let missing = arr.pop()!
     let st3 = shiftRight(arr, missing)
